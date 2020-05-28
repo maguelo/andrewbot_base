@@ -51,8 +51,8 @@ def translate_point_to_velocity_cmd(x, y, v_max=255, magnitude_max=1.0):
     return cmd_left, cmd_right
 
 
-def move_base_callback(movement_data):
-    cmd_left, cmd_right=translate_point_to_velocity_cmd(movement_data.x, movement_data.y)
+def move_base_callback(base_movement):
+    cmd_left, cmd_right=translate_point_to_velocity_cmd(base_movement.x, base_movement.y)
     
     dir_left = 0x01
     dir_right = 0x01
