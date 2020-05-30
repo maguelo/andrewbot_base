@@ -7,6 +7,7 @@ class AndrewbotBaseDriver(object):
         
 
     def _move_base_command(self, cmd_left, cmd_right):
+        print cmd_left, cmd_right
         command = create_empty_command()
 
         dir_left = 0x01
@@ -29,17 +30,19 @@ class AndrewbotBaseDriver(object):
         
     
     def rotate_base(self, angular):
-        if abs(angular) > 0.0: # turn
-            cmd_left=  angular * self.v_max
-            cmd_right = angular * self.v_max
+        if angular == 0:
+            return None
+        else: # turn
+            cmd_left=  abs(angular) * self.v_max
+            cmd_right = abs(angular) * self.v_max
             
-            if angular > 0: # Turn left
+            if angular >= 0: # Turn left
                 cmd_left = -cmd_left
             else:           # Turn right
                 cmd_right= -cmd_right
 
             return self._move_base_command(cmd_left, cmd_right)
-        return None
+        
     
 
     def translate_base(self, linear):
