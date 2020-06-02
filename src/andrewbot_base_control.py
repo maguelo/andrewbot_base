@@ -3,10 +3,10 @@ import rospy
 import math
 from andrewbot_msgs.msg import RobotCommand
 from geometry_msgs.msg import Twist
-from andrewbot_base_driver import AndrewbotBaseDriver
+from andrewbot_base_driver import BaseDriver
 
 robot_base_pub = rospy.Publisher('andrewbot/RobotCommand', RobotCommand, queue_size=10)
-robot_base = AndrewbotBaseDriver()
+robot_base = BaseDriver()
 robot_command = RobotCommand()
 
 def sent_robot_command(command):    

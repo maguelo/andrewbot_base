@@ -1,7 +1,7 @@
 from andrewbot_utils.arduino_command import create_empty_command, prepare_message
 
 
-class AndrewbotBaseDriver(object):
+class BaseDriver(object):
     def __init__(self, max_velocity=255):
         self.v_max = max_velocity
         
