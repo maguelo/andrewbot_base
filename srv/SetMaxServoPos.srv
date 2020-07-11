@@ -1,0 +1,3 @@
+andrewbot_msgs/RobotCommand max_position
+---
+andrewbot_msgs/RobotCommand max_position_setup
