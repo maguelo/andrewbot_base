@@ -7,7 +7,7 @@ class BaseDriver(object):
         
 
     def _move_base_command(self, cmd_left, cmd_right):
-        print cmd_left, cmd_right
+        print (cmd_left, cmd_right)
         command = create_empty_command()
 
         dir_left = 0x01
